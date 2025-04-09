@@ -20,7 +20,7 @@ namespace pamcamkes
     /// </summary>
     public partial class MainWindow : Window
     {
-        int price = 1;
+        int price = 200;
         int total = 0;
         public MainWindow()
         {
@@ -49,8 +49,8 @@ namespace pamcamkes
                 typeF.Text = (string)typeF.Tag;
             };
 
-            panel.Children.Add(new Label() { Content = "Order details:", Foreground = new SolidColorBrush(Color.FromRgb(100, 225, 200)) });
-            panel.Children.Add(new Label() { Content = "Total: " + total, Foreground = new SolidColorBrush(Color.FromRgb(100, 225, 200)) });
+            panel.Children.Add(new Label() { Content = "Order details:", Foreground = new SolidColorBrush(Color.FromRgb(100, 255, 200)) });
+            panel.Children.Add(new Label() { Content = "Total: " + total, Foreground = new SolidColorBrush(Color.FromRgb(100, 255, 200)) });
         }
         void Add()
         {
@@ -60,7 +60,7 @@ namespace pamcamkes
                 panel.Children.Add(new Label() { Content = number.Text, Foreground = new SolidColorBrush(Color.FromRgb(100, 225, 200)) });
                 panel.Children.Add(new Label() { Content = typeD.Text, Foreground = new SolidColorBrush(Color.FromRgb(100, 225, 200)) });
                 panel.Children.Add(new Label() { Content = typeF.Text, Foreground = new SolidColorBrush(Color.FromRgb(100, 225, 200)) });
-                total++;
+                total += price;
                 panel.Children.Add(new Label() { Content = "Total: " + total, Foreground = new SolidColorBrush(Color.FromRgb(100, 225, 200)) });
             }
             else
@@ -83,11 +83,6 @@ namespace pamcamkes
                 TextBox tb = s as TextBox;
                 if (tb.Text == "") tb.Text = (string)tb.Tag;
             }
-        }
-
-        private void panel_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
-        {
-
         }
     }
 }
