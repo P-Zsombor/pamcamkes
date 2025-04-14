@@ -35,10 +35,7 @@ namespace pamcamkes
             typeD.LostFocus += noclick;
             typeF.LostFocus += noclick;
 
-            add.Click += (s, e) =>
-            {
-                Add();
-            };
+            add.Click += (s, e) => Add();
 
             cancel.Click += (s, e) =>
             {
@@ -47,10 +44,7 @@ namespace pamcamkes
                 typeF.Text = (string)typeF.Tag;
             };
 
-            order.Click += (s, e) =>
-            {
-                Write();
-            };
+            order.Click += (s, e) => Write();
 
             panel.Children.Add(new Label() { Content = "Order details:", Foreground = new SolidColorBrush(Color.FromRgb(20, 80, 255)) });
             panel.Children.Add(new Label() { Content = "Total: " + total, Foreground = new SolidColorBrush(Color.FromRgb(20, 80, 255)) });
@@ -66,10 +60,7 @@ namespace pamcamkes
                 total += price;
                 panel.Children.Add(new Label() { Content = "Total: " + total, Foreground = new SolidColorBrush(Color.FromRgb(20, 80, 255)) });
             }
-            else
-            {
-                MessageBox.Show("Invalid input");
-            }
+            else MessageBox.Show("Invalid input");
         }
         void Write()
         {
